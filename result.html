@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Screening Results</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .match-result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 16px;
+        }
+
+        .match-success {
+            color: #4CAF50;
+        }
+
+        .match-failure {
+            color: #FF5733;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resume Screening Results</h1>
+    <p>Job Description:</p>
+    <p>{{ job_description }}</p>
+    <p>Resume:</p>
+    <p>{{ resume }}</p>
+    <p>Match Result:</p>
+    {% if match_result %}
+        <p style="color: green;">This resume is a potential match!</p>
+    {% else %}
+        <p style="color: red;">This resume may not be a strong match.</p>
+    {% endif %}
+    <a href="/">Go Back</a>
+</body>
+</html>
+
+
